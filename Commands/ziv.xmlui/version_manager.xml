@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dialog title="版本号管理器" buttons="accept" >
+	<radiogroup id="initialType">
+		<radio selected="true" label=" 选择位置创建 Version.as" value='1' />
+		<radio label=" 从文件导入版本号" value='2' />
+		<radio label=" 不对版本号管理" value='3' />
+	</radiogroup>
+</dialog>

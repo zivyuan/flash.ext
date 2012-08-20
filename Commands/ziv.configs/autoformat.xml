@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- 运算符格式设置 -->
+	<operation name="+" value=" + " />
+	<operation name="-" value=" - " />
+	<operation name="*" value=" * " />
+	<operation name="/" value=" / " />
+	<operation name="+=" value=" += " />
+	<operation name="-=" value=" -= " />
+	<operation name="*=" value=" *= " />
+	<operation name="/=" value=" /= " />
+	<operation name="=" value=" = " />
+	<operation name="%" value=" % " />
+	<operation name="==" value=" == " />
+	<operation name="===" value=" === " />
+	<operation name="&gt;=" value=" &gt;= " />
+	<operation name="&lt;=" value=" &lt;= " />
+	<operation name="!=" value=" != " />
+	<operation name="?" value=" ? " />
+	<operation name=":" value=" : " />
+	<operation name="&lt;&lt;" value=" &lt;&lt; " />
+	<operation name="&gt;&gt;" value=" &gt;&gt; " />
+	<operation name="&gt;&gt;&gt;" value=" &gt;&gt;&gt; " />
+	<operation name="^" value=" ^ " />
+	<operation name="~" value=" ~ " />
+	<operation name="|" value=" | " />
+	<operation name="||" value=" || " />
+	<operation name="&&" value=" && " />
+	<operation name="," value=", " />
+	
+	<!--  运算符前后空格设置 left/right/both/none -->
+	<set name="addSpaceForOperation" value="both" />
+	<!-- 是否清除超过两行的空格 -->
+	<set name="eatMultiLines" value="true" />
+	<!-- 在函数前后添加空行.  只对独立的函数定义有效 -->
+	<set name="addLineBeforeFunction" value="false" />
+	<set name="addLineAfterFunction" value="true" />
+	<set name="addLineAfterPackage" value="true" />
+	<!-- 函数声明位置 最前(first)/最后(last)/用户定义(user) -->
+	<set name="functionDeclarePosition" value="first" />
+	<!-- 缩进设置 -->
+	<set name="ident" value="\t" />
+	<!-- 花括号({)换行设置 -->
+		<set name="wrapOnBraces" value="false" />
+
+	<set name="wrapOnFunction" value="false" />
+	<set name="wrapOnFor" value="false" />
+	<set name="wrapOnIf" value="false" />
+	<set name="wrapOnElse" value="false" />
+	<set name="wrapOnTry" value="false" />
+	<set name="wrapOnCatch" value="false" />
+	<set name="wrapOnFinal" value="false" />
+	<set name="wrapOnObject" value="false" />
+	<set name="wrapOnSwitch" value="false" />
+	<set name="wrapOnDoWhile" value="false" />
+	<set name="wrapOnWhile" value="false" />
+</config>
