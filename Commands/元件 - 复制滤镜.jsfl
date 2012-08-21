@@ -33,7 +33,7 @@ __cp.glowFilter = function (filter){
 		filter.knockout
 	];
 
-	return 'filter = new GlowFilter('+params.join(', ')+');';
+	return 'myFilter = new GlowFilter('+params.join(', ')+');';
 };
 // new BlurFilter(blurX, blurY, quality);
 __cp.blurFilter = function (filter){
@@ -42,7 +42,7 @@ __cp.blurFilter = function (filter){
 		filter.blurY,
 		'BitmapFilterQuality.' + filter.quality.toUpperCase()
 	];
-	var str = 'filter = new BlurFilter('+params.join(', ')+');';
+	var str = 'myFilter = new BlurFilter('+params.join(', ')+');';
 	return str;
 };
 // new DropShadowFilter(distance, angle, color, alpha, blurX, blurY, strength, quality, inner, knockout, hideObject)
@@ -60,7 +60,7 @@ __cp.dropShadowFilter = function (filter){
 		filter.knockout,
 		filter.hideObject
 	];
-	return 'filter = new DropShadowFilter('+params.join(', ')+');';
+	return 'myFilter = new DropShadowFilter('+params.join(', ')+');';
 };
 // new BevelFilter(distance, angle, highlightColor, highlightAlpha, shadowColor, shadowAlpha, blurX, blurY, strength, quality, type, knockout)
 __cp.bevelFilter = function (filter){
@@ -78,7 +78,7 @@ __cp.bevelFilter = function (filter){
 		'BitmapFilterType.' + filter.type.toUpperCase(),
 		filter.knockout
 	];
-	return 'filter = new BevelFilter('+params.join(', ')+');';
+	return 'myFilter = new BevelFilter('+params.join(', ')+');';
 };
 // new GradientGlowFilter(distance, angle, colors, alphas, ratios, blurX, blurY, strength, quality, type, knockout)
 __cp.gradientGlowFilter = function (filter){
@@ -100,7 +100,7 @@ __cp.gradientGlowFilter = function (filter){
 		'BitmapFilterType.' + filter.type.toUpperCase(),
 		filter.knockout
 	];
-	return 'filter = new GradientGlowFilter('+params.join(', ')+');';
+	return 'myFilter = new GradientGlowFilter('+params.join(', ')+');';
 };
 // new GradientBevelFilter(distance, angle, colors, alphas, ratios, blurX, blurY, strength, quality, type, knockout)
 __cp.gradientBevelFilter = function (filter){
@@ -122,7 +122,7 @@ __cp.gradientBevelFilter = function (filter){
 		'BitmapFilterType.' + filter.type.toUpperCase(),
 		filter.knockout
 	];
-	return 'filter = new GradientBevelFilter('+params.join(', ')+');';
+	return 'myFilter = new GradientBevelFilter('+params.join(', ')+');';
 };
 // ---FP10 里没有这个类?
 __cp.adjustColorFilter = function (filter){
@@ -150,7 +150,7 @@ function copyFiltersToAS(movieclip){
 			if(__cp[filter.name]){
 				str = __cp[filter.name](filter);
 				if(!(/^\/\//.test(str)))
-					filter_str.push(str + '\nfilters.push(filter);');
+					filter_str.push(str + '\nmyFilters.push(filter);');
 			}else{
 				// for(var k in filter){
 				//	fl.trace(k + ': ' + filter[k]);
@@ -159,7 +159,7 @@ function copyFiltersToAS(movieclip){
 		}
 	}
 	if(filter_str.length > 0){
-		return 'var filters:Array = [];\nvar filter:BitmapFilter;' + filter_str.join('\n');
+		return 'var myFilters:Array = [];\nvar myFilter:BitmapFilter;\n' + filter_str.join('\n');
 	}else{
 		return '';
 	}
