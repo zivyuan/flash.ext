@@ -184,7 +184,13 @@ function main(){
 
 	fl.outputPanel.clear();
 	var filters = copyFiltersToAS(inst);
-	fl.trace(filters == '' ? '对象没有添加滤镜或滤镜不被支持.' : filters);
+	if(filters == ''){
+		fl.trace('对象没有添加滤镜或滤镜不被支持.');
+	}else{
+		fl.trace(filters);
+		fl.clipCopyString(filters);
+		fl.trace('\n// 代码已经复制');
+	}
 }
 
 //

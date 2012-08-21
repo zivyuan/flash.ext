@@ -7,7 +7,7 @@ function exportToAS(){
 	var sel=dom.selection.concat([]);
 	var len=sel.length;
 	var oname="",oclass,reg_class=/(\w+\.)*/;
-	var declare=[];
+	var declare=[],imp=[];
 	for(var i=0;i<len;i++){
 		fl.outputPanel.trace(sel[i].name+" : "+sel[i].elementType);
 		oname = sel[i].name;
@@ -24,6 +24,8 @@ function exportToAS(){
 						if(oclass==undefined){
 							oclass="MovieClip";
 						}else{
+							if(imp.indexOf(oclass)==-1)
+								imp.push(oclass);
 							oclass=oclass.replace(reg_class,"")
 						}
 						break;
@@ -44,16 +46,18 @@ function exportToAS(){
 	}
 	//
 	if(declare.length>0){
+		var declare = declare.join("\n");
+		var impstr = 'import ' + imp.join(';\nimport ') + ';\n';
 		fl.outputPanel.clear();
-		fl.outputPanel.trace(declare.join("\n"));
+		fl.trace(impstr + '\n' + declare);
+		fl.clipCopyString(impstr + '\n' + declare);
 	}
 }
+
 function getDeclare(name,type){
 	return "public var "+name+":"+type+";";
 }
-function getDefine(name,type){
-	return "_"+name+" = "+type+"(getChildByName(\""+name+"\"));";
-}
+
 
 
 var dom = fl.getDocumentDOM();
