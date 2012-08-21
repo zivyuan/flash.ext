@@ -27,7 +27,7 @@ __cp.glowFilter = function (filter){
 		__cp.getAlpha(filter.color),
 		filter.blurX,
 		filter.blurY,
-		filter.strength,
+		filter.strength/100,
 		'BitmapFilterQuality.' + filter.quality.toUpperCase(),
 		filter.inner,
 		filter.knockout
@@ -54,7 +54,7 @@ __cp.dropShadowFilter = function (filter){
 		__cp.getAlpha(filter.color),
 		filter.blurX,
 		filter.blurY,
-		filter.strength,
+		filter.strength/100,
 		'BitmapFilterQuality.' + filter.quality.toUpperCase(),
 		filter.inner,
 		filter.knockout,
@@ -73,7 +73,7 @@ __cp.bevelFilter = function (filter){
 		__cp.getAlpha(filter.shadowColor),
 		filter.blurX,
 		filter.blurY,
-		filter.strength,
+		filter.strength/100,
 		'BitmapFilterQuality.' + filter.quality.toUpperCase(),
 		'BitmapFilterType.' + filter.type.toUpperCase(),
 		filter.knockout
@@ -95,7 +95,7 @@ __cp.gradientGlowFilter = function (filter){
 		'['+filter.posArray+']',
 		filter.blurX,
 		filter.blurY,
-		filter.strength,
+		filter.strength/100,
 		'BitmapFilterQuality.' + filter.quality.toUpperCase(),
 		'BitmapFilterType.' + filter.type.toUpperCase(),
 		filter.knockout
@@ -117,7 +117,7 @@ __cp.gradientBevelFilter = function (filter){
 		'['+filter.posArray+']',
 		filter.blurX,
 		filter.blurY,
-		filter.strength,
+		filter.strength/100,
 		'BitmapFilterQuality.' + filter.quality.toUpperCase(),
 		'BitmapFilterType.' + filter.type.toUpperCase(),
 		filter.knockout
