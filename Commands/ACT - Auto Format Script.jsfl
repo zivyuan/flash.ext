@@ -183,7 +183,6 @@ function startFormator(){
 //
 //
 fl.outputPanel.clear();
-var JSLib_PATH = toURI(fl.configDirectory) +"/Commands";
 //格式化过程中将忽视  注释, 字串, xml
 var _code_comments = new Array;
 var _code_strings = new Array;

@@ -1,8 +1,8 @@
 ﻿/*
  *	Flash IDE 的 package 自动导入工具
  *	version 1.61
- *	ziv.yuan(onenature)
- *	ziv.yuan@qq.com 
+ *	ziv.yuan
+ *	ziv.yuan@gmail.com
  */
 
 
@@ -29,8 +29,8 @@ function run(funname){
 	}
 	return re;
 }
-var _path_lib = fl.configURI + "Commands/ziv.package/";
-var _path_conf = fl.configURI + "Commands/ziv.configs/";
+var _path_lib = fl.configURI + "zTools/v0.1/lib/";
+var _path_conf = fl.configURI + "zTools/v0.1/";
 
 function dtrace(msg){
 	if(!cleared){

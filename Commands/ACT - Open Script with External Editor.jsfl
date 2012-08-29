@@ -93,7 +93,7 @@ function main(){
 	}
 }
 
-var _path_lib = fl.configURI + "Commands/ziv.package/";
-var _path_conf = fl.configURI + "Commands/ziv.configs/";
+var _path_lib = fl.configURI + "zTools/v0.1/lib/";
+var _path_conf = fl.configURI + "zTools/v0.1/";
 
 main();
