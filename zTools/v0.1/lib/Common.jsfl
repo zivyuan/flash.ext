@@ -1,18 +1,12 @@
 ﻿/**
- * Flash JSFL 通用函数库
+ * Flash JSFL Common Library
  *
  * @Date:                2010-01-18
- * @LastModfied:         2010-04-24
  * @Author:              ziv.yuan
  * @E-Mail:              ziv.yuan@gmail.com
  *
  */
 
-function trace(){
-	var s="";
-	for(var i=0;i<arguments.length;i++)	s+=arguments[i]+",";
-	fl.trace(s.substr(0,s.length-1));
-}
 /*
  * 将 URL 格式字串转换成 URI 格式字串
  *
@@ -220,3 +214,5 @@ function objCombine(obj1, obj2, mod){
 	}
 	return obj;
 }
+
+fl.trace('lib:common loaded.');
